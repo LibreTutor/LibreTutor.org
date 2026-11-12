@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "entries": [
+    {
+      "path": "data/world/lod0.bin",
+      "sha256": "f5a5ef69cf186c434d2a56ba11458c65cb47a69c7ff3ab7d9668b312e37b0c6a",
+      "bytes": 1229384,
+      "source": { "citation": "Natural Earth 5.1.1, Admin 0 - Countries, 1:110m cultural vectors (quantized and triangulated by the project build; input zip sha256 0f243aeac8ac6cf26f0417285b0bd33ac47f1b5bdb719fd3e0df37d03ea37110)", "url": "https://www.naturalearthdata.com/downloads/110m-cultural-vectors/", "accessed": "2026-11-08", "kind": "dataset" },
+      "licence": "public-domain",
+      "attribution": "Made with Natural Earth (naturalearthdata.com), public domain.",
+      "retrieved": "2026-11-08",
+      "fidelity": "derived"
+    },
+    {
+      "path": "data/world/lod1.bin",
+      "sha256": "97f0ea87c273a0825526b0c79bc12e7e6a92477c9464ad04ef95a2f03fc692b7",
+      "bytes": 3084572,
+      "source": { "citation": "Natural Earth 5.1.1, Admin 0 - Countries, 1:50m cultural vectors (quantized and triangulated by the project build; input zip sha256 5fed433373581fa648920435f937d95f2d3c0200e067409c6478dcdf1b853139)", "url": "https://www.naturalearthdata.com/downloads/50m-cultural-vectors/", "accessed": "2026-11-08", "kind": "dataset" },
+      "licence": "public-domain",
+      "attribution": "Made with Natural Earth (naturalearthdata.com), public domain.",
+      "retrieved": "2026-11-08",
+      "fidelity": "derived"
+    },
+    {
+      "path": "data/world/lod2.bin",
+      "sha256": "1efbcf1789ba042f1f8b770c3089074aadd711e5fb795624335897586964e225",
+      "bytes": 6125644,
+      "source": { "citation": "Natural Earth 5.1.1, Admin 0 - Countries, 1:10m cultural vectors (quantized and triangulated by the project build; input zip sha256 ce1ac7036499a0edd641fbc093cd209a98f96a49d2eca8480aaacad35138a7f6)", "url": "https://www.naturalearthdata.com/downloads/10m-cultural-vectors/", "accessed": "2026-11-08", "kind": "dataset" },
+      "licence": "public-domain",
+      "attribution": "Made with Natural Earth (naturalearthdata.com), public domain.",
+      "retrieved": "2026-11-08",
+      "fidelity": "derived"
+    },
+    {
+      "path": "data/world/manifest.json",
+      "sha256": "2c081a13f404da9d0f906864c29e9f095924abe45e28062d4033b93f8a1622d0",
+      "bytes": 25434,
+      "source": { "citation": "Build metadata of the three world LODs (LOD hashes, counts, exclusions, country names NAME_EN/NAME_ES from Natural Earth 5.1.1 Admin 0 - Countries)", "url": "https://www.naturalearthdata.com/downloads/10m-cultural-vectors/", "accessed": "2026-11-08", "kind": "dataset" },
+      "licence": "public-domain",
+      "attribution": "Made with Natural Earth (naturalearthdata.com), public domain. Country names from NAME_EN/NAME_ES.",
+      "retrieved": "2026-11-08",
+      "fidelity": "derived"
+    },
+    {
+      "path": "data/time/delta-t.json",
+      "sha256": "75b36419559d2c47b88724104499917940fb8e00a83e62e78190a12ae3e97d58",
+      "bytes": 8615,
+      "source": {"citation": "Delta-T (TT - UT1) 1955 to today observed, with the USNO prediction segment: U.S. Naval Observatory, Earth Orientation Dept., Series 7 files historic_deltat.data, deltat.data and deltat.preds (retrieved 2026-11-08; the raw inputs and their sha256 are listed inside the file and kept under tests/cosmic-time-fixtures/raw/). Extracted by the LB-19 build script; US Government work, mapped to public-domain (owner to confirm).", "url": "https://maia.usno.navy.mil/ser7/", "accessed": "2026-11-08", "kind": "dataset"},
+      "licence": "public-domain",
+      "attribution": "Delta-T observed data: U.S. Naval Observatory (maia.usno.navy.mil/ser7), IERS UT1; US Government work, public domain.",
+      "retrieved": "2026-11-08",
+      "fidelity": "observed"
+    },
+    {
+      "path": "data/time/leap-seconds.json",
+      "sha256": "dd108e5410f9b6d2724c9ee46a3ecb1ef7cd49e0910624f255b43f9dac8de677",
+      "bytes": 3111,
+      "source": {"citation": "Leap-second table (TAI-UTC) from the IERS Bulletin C list leap-seconds.list, IANA copy (retrieved 2026-11-08; the file states it is in the public domain; raw input and sha256 are listed inside the file and kept under tests/cosmic-time-fixtures/raw/). Expires 2027-06-28.", "url": "https://data.iana.org/time-zones/tzdb/leap-seconds.list", "accessed": "2026-11-08", "kind": "dataset"},
+      "licence": "public-domain",
+      "attribution": "Leap seconds: IERS Bulletin C (Paris Observatory), via the IANA leap-seconds.list; public domain.",
+      "retrieved": "2026-11-08",
+      "fidelity": "observed"
+    }
+  ]
+}

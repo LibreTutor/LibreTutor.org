@@ -1,0 +1,56 @@
+{
+ "schemaVersion": 1,
+ "id": "leap-seconds-iers",
+ "quantity": "TAI-UTC",
+ "unit": "seconds",
+ "convention": "each entry is in force from 00:00:00 UTC of effective date (MJD) until the next entry; from 1972-01-01 only (rubber-second UTC 1961-1972 is out of scope)",
+ "provenance": {
+  "publisher": "IERS Earth Orientation Center, Paris Observatory (IERS Bulletin C), distributed as leap-seconds.list (NTP format)",
+  "sources": [
+   {
+    "file": "tests/cosmic-time-fixtures/raw/leap-seconds.list",
+    "url": "https://data.iana.org/time-zones/tzdb/leap-seconds.list",
+    "retrieved": "2026-11-08",
+    "sha256": "db5a895f16853b03bfc865e8d68f9fc8710ef1740e3400c701cd46a5bbbc3433",
+    "bytes": 5065,
+    "role": "leap second table, NTP seconds since 1900"
+   }
+  ],
+  "licence": "public-domain",
+  "licenceNote": "The file states \"This file is in the public domain.\" Cross-checked against hpiers.obspm.fr/iers/bul/bulc/Leap_Second.dat (sha256 6cb6f5d4...94e268d7, same 28 entries) and USNO tai-utc.dat (same values).",
+  "attribution": "Leap seconds: IERS Earth Orientation Center (IERS Bulletin C), file leap-seconds.list.",
+  "fidelity": "observed"
+ },
+ "validThroughMjd": 61584,
+ "validThrough": "2027-06-28",
+ "entries": [
+  { "effective": "1972-01-01", "mjd": 41317, "taiMinusUtcS": 10 },
+  { "effective": "1972-07-01", "mjd": 41499, "taiMinusUtcS": 11 },
+  { "effective": "1973-01-01", "mjd": 41683, "taiMinusUtcS": 12 },
+  { "effective": "1974-01-01", "mjd": 42048, "taiMinusUtcS": 13 },
+  { "effective": "1975-01-01", "mjd": 42413, "taiMinusUtcS": 14 },
+  { "effective": "1976-01-01", "mjd": 42778, "taiMinusUtcS": 15 },
+  { "effective": "1977-01-01", "mjd": 43144, "taiMinusUtcS": 16 },
+  { "effective": "1978-01-01", "mjd": 43509, "taiMinusUtcS": 17 },
+  { "effective": "1979-01-01", "mjd": 43874, "taiMinusUtcS": 18 },
+  { "effective": "1980-01-01", "mjd": 44239, "taiMinusUtcS": 19 },
+  { "effective": "1981-07-01", "mjd": 44786, "taiMinusUtcS": 20 },
+  { "effective": "1982-07-01", "mjd": 45151, "taiMinusUtcS": 21 },
+  { "effective": "1983-07-01", "mjd": 45516, "taiMinusUtcS": 22 },
+  { "effective": "1985-07-01", "mjd": 46247, "taiMinusUtcS": 23 },
+  { "effective": "1988-01-01", "mjd": 47161, "taiMinusUtcS": 24 },
+  { "effective": "1990-01-01", "mjd": 47892, "taiMinusUtcS": 25 },
+  { "effective": "1991-01-01", "mjd": 48257, "taiMinusUtcS": 26 },
+  { "effective": "1992-07-01", "mjd": 48804, "taiMinusUtcS": 27 },
+  { "effective": "1993-07-01", "mjd": 49169, "taiMinusUtcS": 28 },
+  { "effective": "1994-07-01", "mjd": 49534, "taiMinusUtcS": 29 },
+  { "effective": "1996-01-01", "mjd": 50083, "taiMinusUtcS": 30 },
+  { "effective": "1997-07-01", "mjd": 50630, "taiMinusUtcS": 31 },
+  { "effective": "1999-01-01", "mjd": 51179, "taiMinusUtcS": 32 },
+  { "effective": "2006-01-01", "mjd": 53736, "taiMinusUtcS": 33 },
+  { "effective": "2009-01-01", "mjd": 54832, "taiMinusUtcS": 34 },
+  { "effective": "2012-07-01", "mjd": 56109, "taiMinusUtcS": 35 },
+  { "effective": "2015-07-01", "mjd": 57204, "taiMinusUtcS": 36 },
+  { "effective": "2017-01-01", "mjd": 57754, "taiMinusUtcS": 37 }
+ ]
+}

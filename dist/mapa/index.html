@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>LibreTutor.org — Mapa de Aventuras 3D (v0.3.0 • Arquitectura 8 Capas + Globo Geodésico 8.5° N + Metro L1/L2/L3)</title>
+
+  <!-- TD-06 (L8-02): favicon vacío inline — elimina el 404 /favicon.ico del console -->
+  <link rel="icon" href="data:," />
+
+  <!-- S-02: Google Fonts (Fredoka & Plus Jakarta Sans) REEMPLAZADOS por pila de fuentes de sistema —
+       100% offline (los archivos de fuente son multi-MB; la pila de sistema es la opción más limpia).
+       El rol visual se conserva en tailwind.config.mjs (fontFamily) con fallbacks de sistema. -->
+
+  <!-- Lucide Icons -->
+  <script src="./vendor/lucide-1.59.0.min.js" integrity="sha384-4VQAGBhahgTiMVvXUqbh6qcs45zGzR/8znv7XORRfWkxZfzRbhLL5Uh+fSdvdqdM" crossorigin="anonymous"></script>
+
+  <!-- Open-Source Game Stack (vendored + pinned + SRI — S-02): Babylon.js 9.30.0 (Apache 2.0) + Earcut 2.2.4 + Anime.js 3.2.2 (MIT) + Canvas-Confetti 1.9.3 (ISC) -->
+  <script src="./vendor/earcut-2.2.4.min.js" integrity="sha384-2H0pAXlHBLfkdkuPuERxxSBlz7fMZ2EqrwxccEG7J9Svyk1SbUDaknB5UCoel/ZX" crossorigin="anonymous"></script>
+  <script src="./vendor/babylon-9.30.0.js" integrity="sha384-LIBdyTK5zKv+vgDq3fMWOat/zhc1rgJawfEGZhKKIHfWJ4s+Y76TLtxeSalcAB6u" crossorigin="anonymous"></script>
+  <script src="./vendor/anime-3.2.2.min.js" integrity="sha384-oLmuahJgYYR1aWgZwdMQQ2AClE6A2eEwV2x1Z7cbIHehfkkmommQLH3wX1NDEszb" crossorigin="anonymous"></script>
+  <script src="./vendor/canvas-confetti-1.9.3.min.js" integrity="sha384-sPwMflxqfAN+Q5mvlkLmHiX3PORGbZSXHiSGPTXT9VHCD/AB+b+r+vJWsqprv+7k" crossorigin="anonymous"></script>
+
+  <!-- S-02: import map — remapa el import ESM de lit-core (lit-components.js no se toca) a la copia vendored + pin (lit 3.3.3 ≡ dist@3).
+       Nota: import maps no soportan SRI (limitación documentada — el pin por nombre/version cubre el rol) -->
+
+
+  <!-- Hoja de Estilos Personalizados (Madera Rústica, Herrajes y Marcadores) -->
+
+  <!-- LB-23: Tailwind COMPILADO (3.4.19, pin exacto; sin CDN). Fuente: css/tailwind.input.css + tailwind.config.mjs + css/tokens.css
+       (tokens de diseño WCAG). Se genera con `npm run build:css` (lo encadena `npm run build`). Va DESPUÉS de styles.css: es el
+       orden de cascada que tenía el CDN (su <style> se añadía al final del head). -->
+  <script type="importmap">
+    { "imports": { "https://cdn.jsdelivr.net/gh/lit/dist@3/core/lit-core.min.js": "./vendor/lit-core-3.3.3.min.js" } }
+  </script>
+  <script type="module" crossorigin src="./assets/index-BBaUafa9.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-MiKtoKYs.css">
+</head>
+<body class="relative w-screen h-screen overflow-hidden select-none">
+
+  <!-- ======================================================================= -->
+  <!-- LIENZO WEBGL 3D DE BABYLON.JS (v0.2.1: PLANETA 3D + METRO L1/L2/L3)     -->
+  <!-- ======================================================================= -->
+  <canvas id="babylon-panama-canvas" role="img" aria-label="Mapa 3D interactivo del Istmo de Panamá: arrastra para girar, usa los botones de zoom y giro del panel inferior" class="absolute inset-0 w-full h-full outline-none cursor-grab active:cursor-grabbing z-0"></canvas>
+
+  <!-- S-03: boot error boundary — fallback visible si WebGL/CDN falla (el UI Lit sigue funcional). -->
+  <!-- Oculto por defecto (hidden + display:none); main.js lo muestra en el catch. -->
+  <div id="lt-webgl-fallback" class="lt-webgl-fallback" hidden>
+    <div class="lt-webgl-fallback-card">
+      <p class="lt-webgl-fallback-title">WebGL no disponible — el mapa 3D no pudo cargarse</p>
+      <p class="lt-webgl-fallback-cause" id="lt-webgl-fallback-cause"></p>
+    </div>
+  </div>
+
+  <!-- CAPA DE NOMBRES LIMPIOS + HOVER CARDS + MICRO-ETIQUETAS DE INFRAESTRUCTURA (60 FPS) -->
+  <div id="projected-labels-layer" class="absolute inset-0 pointer-events-none z-10 overflow-hidden"></div>
+  <div id="projected-micro-landmarks" class="absolute inset-0 pointer-events-none z-10 overflow-hidden"></div>
+
+  <!-- ======================================================================= -->
+  <!-- WEB COMPONENTS REACTIVOS DE LIT (v0.2.1 • HUD, GUÍA Y MODALES)          -->
+  <!-- ======================================================================= -->
+  <lt-top-hud id="ui-top-hud"></lt-top-hud>
+  <lt-park-guide id="ui-park-guide"></lt-park-guide>
+  <lt-bottom-dock id="ui-bottom-dock"></lt-bottom-dock>
+  <lt-lesson-modal id="ui-lesson-modal"></lt-lesson-modal>
+
+  <!-- Punto de Entrada Principal (ES Modules) -->
+
+</body>
+</html>

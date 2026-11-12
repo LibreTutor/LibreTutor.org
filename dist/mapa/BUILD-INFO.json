@@ -1,0 +1,5 @@
+{
+  "source": "LibreTutor map source (public build, LT_PUBLIC_MAP=1)",
+  "commit": "ee2dbba",
+  "builtWith": "npm ci && npm run build:public (vite)"
+}
